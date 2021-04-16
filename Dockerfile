@@ -11,11 +11,10 @@ WORKDIR /sources
 RUN git clone --depth=1 git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
 RUN wget https://busybox.net/downloads/busybox-1.32.1.tar.bz2
 RUN tar xvjf busybox-1.32.1.tar.bz2
-COPY ./scripts/build.sh /sources
-COPY ./scripts/init /sources
 
 # initial build, so as to speed up development
-RUN /sources/build.sh
+COPY ./scripts/build-k.sh /sources
+RUN /sources/build-k.sh
 
 WORKDIR /scripts
 EXPOSE 5900
