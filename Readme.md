@@ -4,8 +4,14 @@
 
 - Checkout, compile and run the latest linux kernel with qemu
 
+- To build the container: `make build`
+
+- To connect to the container: `make connect`
+
 - Once connected to the container, run `/scripts/build-fs.sh` and
   `start-qemu.sh`
+
+- To disconnect from qemu: CTRL-a x
 
 ## References
 
