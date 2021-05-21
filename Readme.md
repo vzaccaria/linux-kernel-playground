@@ -1,15 +1,19 @@
-> A simple Linux kernel playground
+> A simply reproducible Linux kernel playground. Checkout, compile and run the
+> latest linux kernel with qemu
 
 ## Features
 
-- Checkout, compile and run the latest linux kernel with qemu
-
 - To build the container: `make build`
 
-- To connect to the container: `make connect`
+- To open a terminal in the container: `make connect`
 
-- Once connected to the container, run `/scripts/build-fs.sh` and
-  `start-qemu.sh`
+- In the container
+
+  - run `/scripts/build-fs.sh` to build up the initial ram disk and then
+    `start-qemu.sh` to launch the kernel
+
+  - You can modify the kernel code and the rerun `/scripts/build-k.sh` to
+    rebuild it
 
 - To disconnect from qemu: CTRL-a x
 
