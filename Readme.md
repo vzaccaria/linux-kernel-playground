@@ -12,8 +12,7 @@
   - run `/scripts/build-fs.sh` to build up the initial ram disk and then
     `start-qemu.sh` to launch the kernel
 
-  - You can modify the kernel code and the rerun `/scripts/build-k.sh` to
-    rebuild it
+  - after modifying the kernel code, rerun `/scripts/build-k.sh` to rebuild it
 
 - To disconnect from qemu: CTRL-a x
 
