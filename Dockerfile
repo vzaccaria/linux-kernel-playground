@@ -19,3 +19,5 @@ RUN /sources/build-k.sh
 WORKDIR /scripts
 EXPOSE 5900
 
+RUN apt-get install -y silversearcher-ag
+
