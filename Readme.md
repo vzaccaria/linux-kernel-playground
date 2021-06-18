@@ -3,8 +3,8 @@
 
 ## Features
 
-- To build the container: `make build` (this also compiles an initial version of
-  the kernel.
+- To build the container: `make build` (this also checks out and compiles the
+  latest version of the Linux kernel)
 
 - To open a terminal in the container: `make connect`
 
