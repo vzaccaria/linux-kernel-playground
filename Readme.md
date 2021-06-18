@@ -3,7 +3,8 @@
 
 ## Features
 
-- To build the container: `make build`
+- To build the container: `make build` (this also compiles an initial version of
+  the kernel.
 
 - To open a terminal in the container: `make connect`
 
@@ -12,7 +13,8 @@
   - run `/scripts/build-fs.sh` to build up the initial ram disk and then
     `start-qemu.sh` to launch the kernel
 
-  - after modifying the kernel code, rerun `/scripts/build-k.sh` to rebuild it
+  - If you want to modify the kernel code, rerun `/scripts/build-k.sh` to
+    rebuild it
 
 - To disconnect from qemu: CTRL-a x
 
