@@ -1,6 +1,6 @@
 FROM ubuntu:groovy
 
-RUN echo "rebuild"
+RUN echo "rebuild n.2"
 RUN apt-get update
 RUN apt-get install -y wget git qemu-system qemu-utils python3 python3-pip \
         gcc libelf-dev libssl-dev bc flex bison vim bzip2  cpio
@@ -20,4 +20,5 @@ WORKDIR /scripts
 EXPOSE 5900
 
 RUN apt-get install -y silversearcher-ag
+RUN apt-get install -y libncurses-dev
 
