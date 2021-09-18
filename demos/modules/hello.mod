@@ -1,0 +1,2 @@
+/demos/modules/hello.o
+
