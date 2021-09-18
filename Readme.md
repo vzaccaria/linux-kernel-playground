@@ -1,7 +1,9 @@
 > A simply reproducible Linux kernel playground. It creates a sandbox container where you can checkout, compile and run the
 > latest linux kernel with qemu.
 
+<p align="center">
 ![](./picture.png)
+</p>
 
 ## Instructions
 
