@@ -14,13 +14,11 @@
 
 - In the container
 
-  - run `/scripts/build-fs.sh` to build up the initial ram disk and then
-    `start-qemu.sh` to launch the kernel
+  1. run `/scripts/build-fs.sh` to build up the initial ram disk 
+  2. run `/scripts/start-qemu.sh` to launch the kernel; you should see AOS-MINI-LINUX printed in the terminal.
+  3. To disconnect from qemu: CTRL-a x
 
-  - If you want to modify the kernel code, rerun `/scripts/build-k.sh` to
-    rebuild it
-
-- To disconnect from qemu: CTRL-a x
+If you modify the kernel code, rerun `/scripts/build-k.sh`. Currently there is only the vi editor installed; to install other tools in the container use `apt-get`. 
 
 ## References
 
