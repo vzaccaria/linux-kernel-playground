@@ -3,7 +3,7 @@
 #include <linux/module.h> // included for all kernel modules
 
 MODULE_LICENSE("GPL"); // The license  under which the module is distributed.
-MODULE_AUTHOR("Girish Joshi"); // The author of the module.
+MODULE_AUTHOR("Girish Joshi"); // The original author of the module (VZ).
 MODULE_DESCRIPTION(
     "HelloWorld Linux Kernel Module."); // The Description of the module.
 
