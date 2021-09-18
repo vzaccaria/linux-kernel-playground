@@ -1,5 +1,5 @@
-> A simply reproducible Linux kernel playground. It creates a sandbox container where you can checkout, compile and run the
-> latest linux kernel with qemu.
+> A simply reproducible Linux kernel playground. It creates a sandbox container
+> where you can checkout, compile and run the latest (stable) linux kernel with qemu.
 
 <p align="center">
   <img src="picture.png">
@@ -14,11 +14,21 @@
 
 - In the container
 
-  1. run `/scripts/build-fs.sh` to build up the initial ram disk 
-  2. run `/scripts/start-qemu.sh` to launch the kernel; you should see AOS-MINI-LINUX printed in the terminal.
+  1. run `/scripts/build-fs.sh` to build up the initial ram disk
+  2. run `/scripts/start-qemu.sh` to launch the kernel;
   3. To disconnect from qemu: CTRL-a x
 
-If you modify the kernel code, rerun `/scripts/build-k.sh`. Currently there is only the vi editor installed; to install other tools in the container use `apt-get`. 
+If you modify the kernel code, rerun `/scripts/build-k.sh`. Currently there is
+only the vi editor installed; to install other tools in the container use
+`apt-get`.
+
+## Challenges
+
+- Challenge 1: try to build and run the kernel. You should see AOS-MINI-LINUX
+  printed in the terminal of the container.
+
+- Challenge 2: try to compile and install in the 'hello world' kernel the module
+  in `/demos/modules`.
 
 ## References
 
