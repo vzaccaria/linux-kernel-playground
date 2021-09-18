@@ -2,7 +2,7 @@
 > latest linux kernel with qemu.
 
 <p align="center">
-![](./picture.png)
+  <img src="picture.png">
 </p>
 
 ## Instructions
