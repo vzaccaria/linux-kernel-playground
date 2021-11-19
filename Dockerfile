@@ -8,7 +8,7 @@ RUN apt-get install -y wget git qemu-system qemu-utils python3 python3-pip \
 # Download kernel
 RUN mkdir -p /sources
 WORKDIR /sources
-RUN git clone --depth=1 git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
+RUN git clone --depth=1 https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
 RUN wget https://busybox.net/downloads/busybox-1.32.1.tar.bz2
 RUN tar xvjf busybox-1.32.1.tar.bz2
 
