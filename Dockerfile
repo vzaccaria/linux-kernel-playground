@@ -18,6 +18,7 @@ RUN /sources/build-k.sh
 
 WORKDIR /scripts
 EXPOSE 5900
+EXPOSE 6000
 
 RUN apt-get install -y silversearcher-ag
 RUN apt-get install -y libncurses-dev
