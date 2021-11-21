@@ -1,2 +1,8 @@
 staging
+*.cmd
+*.symvers
+*.ko
+*.mod
+*.mod.c
+*.order
 
