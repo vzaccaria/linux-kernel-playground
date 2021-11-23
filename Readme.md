@@ -20,7 +20,7 @@
   3. To disconnect from qemu: CTRL-a x
 
 If you modify the kernel code, rerun `/scripts/build-k.sh`. Currently there is
-the neovim editor (~nvim~) installed and configured for error reporting,
+the neovim editor (`nvim`) installed and configured for error reporting,
 formatting and completion; to install other tools in the container use
 `apt-get`.
 
