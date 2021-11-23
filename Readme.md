@@ -1,5 +1,6 @@
 > A simply reproducible Linux kernel playground. It creates a sandbox container
-> where you can checkout, compile and run the latest (stable) linux kernel with qemu.
+> where you can checkout, compile and run the latest (stable) linux kernel with
+> qemu.
 
 <p align="center">
   <img src="picture.png">
@@ -19,7 +20,8 @@
   3. To disconnect from qemu: CTRL-a x
 
 If you modify the kernel code, rerun `/scripts/build-k.sh`. Currently there is
-only the vi editor installed; to install other tools in the container use
+the neovim editor (~nvim~) installed and configured for error reporting,
+formatting and completion; to install other tools in the container use
 `apt-get`.
 
 ## Challenges
