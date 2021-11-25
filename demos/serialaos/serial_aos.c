@@ -125,7 +125,7 @@ static const struct file_operations serialaos_fops = {
     .read=serialaos_read,
 };
 
-static int __init hello_init(void)
+static int __init serialaos_init(void)
 {
     int result;
 
@@ -157,7 +157,7 @@ static int __init hello_init(void)
     return 0;
 }
 
-static void __exit hello_cleanup(void)
+static void __exit serialaos_cleanup(void)
 {
     unregister_chrdev(major, "serialaos");
     release_region(PORT_BASE, PORT_SIZE);
@@ -165,5 +165,5 @@ static void __exit hello_cleanup(void)
     pr_info("serialaos: bye\n");
 }
 
-module_init(hello_init);
-module_exit(hello_cleanup);
+module_init(serialaos_init);
+module_exit(serialaos_cleanup);
