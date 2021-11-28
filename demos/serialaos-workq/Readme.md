@@ -5,23 +5,22 @@ bottom handlers) which processes received characters. At the moment, the work
 queue just prints the characters received and sends them to reading processes.
 
 ```
-               RBR on                                                   
-┌────────┐   interrupt                                                  
-│  UART  │─ ─ ─ ─ ─ ─ ─                                                 
-└────────┘             ▼                      rxq                       
-              ┌─────────────────┐        ────────┬┬┬┬┬┐                 
-              │   serial_irq    │──────────────▶ ││││││───────┐         
-              └─────────────────┘        ────────┴┴┴┴┴┘       │         
-                                                              ▼         
+               RBR on
+┌────────┐   interrupt
+│  UART  │─ ─ ─ ─ ─ ─ ─
+└────────┘             ▼                      rxq
+              ┌─────────────────┐        ────────┬┬┬┬┬┐
+              │   serial_irq    │──────────────▶ ││││││───────┐
+              └─────────────────┘        ────────┴┴┴┴┴┘       │
+                                                              ▼
                                                      ┌─────────────────┐
 ┌────────┐                                           │    serial_wq    │
 │VFS/read│─ ─ ─ ─ ─ ─ ─                              └─────────────────┘
-└────────┘             ▼                       rxq            │         
-     ▲        ┌─────────────────┐         ┌┬┬┬┬┬────────      │         
-     └ ─ ─ ─ ─│ serialaos_read  │◀────────││││││◀─────────────┘         
+└────────┘             ▼                      urxq            │
+     ▲        ┌─────────────────┐         ┌┬┬┬┬┬────────      │
+     └ ─ ─ ─ ─│ serialaos_read  │◀────────││││││◀─────────────┘
               └─────────────────┘         └┴┴┴┴┴────────
 ```
-
 
 ## Challenge 1: Checking out a workqueue
 
