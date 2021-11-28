@@ -1,9 +1,27 @@
 # Workqueues
 
 This example of the serial driver introduces a workqueue (one of the possible
-bottom handlers) which processes received characters.
-At the moment, the work queue just prints the characters
-received and sends them to reading processes.
+bottom handlers) which processes received characters. At the moment, the work
+queue just prints the characters received and sends them to reading processes.
+
+```
+               RBR on                                                   
+┌────────┐   interrupt                                                  
+│  UART  │─ ─ ─ ─ ─ ─ ─                                                 
+└────────┘             ▼                      rxq                       
+              ┌─────────────────┐        ────────┬┬┬┬┬┐                 
+              │   serial_irq    │──────────────▶ ││││││───────┐         
+              └─────────────────┘        ────────┴┴┴┴┴┘       │         
+                                                              ▼         
+                                                     ┌─────────────────┐
+┌────────┐                                           │    serial_wq    │
+│VFS/read│─ ─ ─ ─ ─ ─ ─                              └─────────────────┘
+└────────┘             ▼                       rxq            │         
+     ▲        ┌─────────────────┐         ┌┬┬┬┬┬────────      │         
+     └ ─ ─ ─ ─│ serialaos_read  │◀────────││││││◀─────────────┘         
+              └─────────────────┘         └┴┴┴┴┴────────
+```
+
 
 ## Challenge 1: Checking out a workqueue
 
@@ -26,8 +44,10 @@ insmod modules/serial_aos.ko && mknod -m 600 /dev/serialaos c 248 1
 
 ## Challenge 2: Complex processing of serial data through deferred work
 
-This is an open challenge; assume that the data arrives in some format (e.g., compressed with some
-known loss-less algorithm or some numerical time-series) and implement some sort of processing (e.g, decompression, filtering of data) as deferred work.
+This is an open challenge; assume that the data arrives in some format (e.g.,
+compressed with some known loss-less algorithm or some numerical time-series)
+and implement some sort of processing (e.g, decompression, filtering of data) as
+deferred work.
 
 ### Resources:
 
