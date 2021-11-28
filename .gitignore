@@ -6,9 +6,6 @@ staging
 *.mod.c
 *.order
 
-demos/serialaos-workq
-
-demos/serialos/.cache
-
+demos/serialaos-workq/.cache
 demos/serialaos/.cache
 
