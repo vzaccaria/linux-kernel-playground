@@ -36,7 +36,10 @@ static int major; // Returned when registering our device in /dev
 spinlock_t txLock;
 static wait_queue_head_t waiting; // For blocking threads waiting on read
 
+/* To the workqueue from interrupt handler */
 Q_DECL(rxq, 64, 1);
+
+/* From the workqueue to the process-context reader(s) */
 Q_DECL(urxq, 64, 1);
 
 /* This is the deferred work to be done. At the moment it just prints received
