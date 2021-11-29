@@ -30,8 +30,8 @@
     int tail;                                                                  \
   } circ_buf_##NAME;                                                           \
   circ_buf_##NAME cb_##NAME;                                                   \
-  spinlock_t sl_cons_##NAME;                                                   \
-  spinlock_t sl_prod_##NAME;                                                   \
+  DEFINE_SPINLOCK(sl_cons_##NAME);                                             \
+  DEFINE_SPINLOCK(sl_prod_##NAME);                                             \
   int sz_##NAME = SZ * ELSIZE;
 
 #define Q_PUT(NAME, jj)                                                        \
