@@ -1,6 +1,7 @@
-FROM ubuntu:groovy
+FROM ubuntu:focal
+ARG DEBIAN_FRONTEND=noninteractive
 
-RUN echo "rebuild n.2"
+RUN echo "rebuild n.3"
 RUN apt-get update
 RUN apt-get install -y wget git qemu-system qemu-utils python3 python3-pip \
         gcc libelf-dev libssl-dev bc flex bison vim bzip2  cpio
@@ -8,7 +9,9 @@ RUN apt-get install -y wget git qemu-system qemu-utils python3 python3-pip \
 # Download kernel
 RUN mkdir -p /sources
 WORKDIR /sources
-RUN git clone --depth=1 https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
+RUN wget https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/snapshot/linux-5.16-rc1.tar.gz
+RUN tar xvzf linux-5.16-rc1.tar.gz
+RUN mv linux-5.16-rc1 linux
 RUN wget https://busybox.net/downloads/busybox-1.32.1.tar.bz2
 RUN tar xvjf busybox-1.32.1.tar.bz2
 
