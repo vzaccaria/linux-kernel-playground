@@ -1,3 +1,6 @@
+**Obsolete: please check the main
+[aos playground repository](https://github.com/vzaccaria/aos-playground)**
+
 > A simply reproducible Linux kernel playground. It creates a sandbox container
 > where you can checkout, compile and run the latest (stable) linux kernel with
 > qemu.
